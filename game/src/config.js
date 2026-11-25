@@ -10,7 +10,7 @@ export const LAYOUT = {
   hud: { x: 24, y: 146, width: 1232, height: 44 },
   // The plating counter in the middle.
   counter: { x: 24, y: 204, width: 1232, height: 250 },
-  plate: { x: 560, y: 250, radius: 92 },
+  plate: { x: 560, y: 315, radius: 95 },
   serveButton: { x: 1000, y: 300, width: 190, height: 64 },
   trashButton: { x: 1000, y: 380, width: 190, height: 44 },
   // Ingredient stations along the bottom.
@@ -22,11 +22,11 @@ export const LAYOUT = {
 
 export const TIMING = {
   shiftSeconds: 150,
-  targetScore: 300,
+  targetScore: 450,
   maxMistakes: 3,
   spawnFirstSeconds: 4,
   spawnStartSeconds: 13,
-  spawnEndSeconds: 7,
+  spawnEndSeconds: 6,
   patienceStartSeconds: 34,
   patienceEndSeconds: 22,
   maxOrders: 4,

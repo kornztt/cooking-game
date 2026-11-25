@@ -32,11 +32,14 @@ export function stageShot(name, world) {
   startGame(world);
   if (name === 'win') {
     // Cook orders until the score passes the target: a real win.
+    // Staging keeps waiting customers patient so the frame shows a win,
+    // not walk-outs; every point still comes from really serving dishes.
     for (let i = 0; i < 8 && s.screen === SCREEN_PLAY; i += 1) {
       if (!cookActiveOrder(world)) break;
+      for (const o of s.orders) o.patience = o.maxPatience;
       runFor(world, 1);
     }
-    if (s.screen === SCREEN_PLAY) { s.score = 300; s.screen = SCREEN_WIN; }
+    if (s.screen === SCREEN_PLAY) { s.score = 450; s.screen = SCREEN_WIN; }
     return { screen: SCREEN_WIN };
   }
   if (name === 'loss') {
